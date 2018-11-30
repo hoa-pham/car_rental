@@ -1,11 +1,13 @@
 ﻿# car_rental
 Serever.php
+//creat connection
+$conn = new mysqli($servername, $username, $password, $DB);
 
-insert($query);
-example: insert("insert into $TableName value ($whateverValueHere)");
+insert($conn,$query);
+example: insert($conn,"insert into $TableName value ($whateverValueHere)");
 
-delete($query);
-update($query);
+delete($conn,$query);
+update($conn,$query);
 
-slectOne($query, "$key");
-selectMu($query,$numOfRow);
+slectOne($conn,$query, "$key");
+selectMu($conn,$query,$numOfRow);
