@@ -1,8 +1,9 @@
 <?php
     $servername = "localhost";
-	$username = "vtran32";
-	$password = "vtran32";
-	$DB = "vtran32";
+	$username = "administrator";
+	$password = "very_strong_password";
+    //changing database name to match
+	$DB = "rentalCar";
 	
 	//creat connection
 	$conn = new mysqli($servername, $username, $password, $DB);
@@ -61,12 +62,15 @@
 		    while($row = $result->fetch_assoc()) {
 		    	if(is_null($row[$keyName])){
 		    	$keyValue = "Error: Check Your Key!";
+
 			    } 
+                
 			    else{
 			    	echo "<script>console.log('" .$i ."')</script>";
 			    	echo "<script>console.log('".$keyName .":  " . $row[$keyName] ."')</script>";
 			        $i++;
 			        $keyValue = $row[$keyName];
+                    echo $row;
 			    } 
 		    }
 		} else {
@@ -74,6 +78,8 @@
 		}
 		return $keyValue;
 	}
+    
+	//echo getOne($conn,"select * from cars where yearMake=2018 limit 1","yearMake");
 
 	/*function getMu($conn,$query,$rowNum)
 		purpose: select mutilple rows at the same time
@@ -95,27 +101,28 @@
 		}
 		]
 	*/
-	function getMu($conn,$query,$rowNum){
-		$keyValue=[];
-		//checking connection!
+	function getMu($conn,$query,$num){
+		$keyValue = array();
 		$result = $conn->query($query);
+		if($result) echo "<script>console.log('DB connected successfully!')</script>";
+		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+        $count = 0;     
 		if ($result->num_rows > 0) {
 		    // output data of each row
 		    $i=0;
-		    while($row = $result->fetch_assoc() && i < $rowNum) {
-			    // echo "<script>console.log('" .$i ."')</script>";
-			    echo "<script>console.log('" . $row[0] ."')</script>";
-			    $i++;
-			    $keyValue.push($row);
-		  	}
-		} 
-		else {
-		    echo "0 results";
+		    while($row = $result->fetch_assoc() and $count < $num) {
+                $temp = Array($i=>$row);
+                $keyValue = array_merge($keyValue, $temp);
+                echo '<br>';
+                $i++;
+                $count++;
+		    }
+		} else {
+		    $keyValue = "Error:Check your query!";
 		}
+
 		return $keyValue;
-		
 	}
-	getMu($conn,"select * from cars",3);
 	
 
 	$conn->close();
