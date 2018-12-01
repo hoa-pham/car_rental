@@ -11,3 +11,9 @@ update($conn,$query);
 
 slectOne($conn,$query, "$key");
 selectMu($conn,$query,$numOfRow);
+
+To getting percified data from database
+$value = getMu($conn, $query, $numOfRow);
+
+then access to the value
+$value[$numOfRow]['keyName']
