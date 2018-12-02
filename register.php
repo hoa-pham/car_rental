@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Register Page</title>
 	<!-- bootrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
 	<div class="container text-center form">
-		<legend>Sign In</legend>
-		<form method="post" action="http://codd.cs.gsu.edu/~vtran32/final/ValidationConfirm.php" autocomplete="on">
+		<legend>Register</legend>
+		<form method="post" action="validationConfirm.php" autocomplete="on">
 		  <div class="form-group">
-		    <label for="email">Email</label>
-		    <input type="text" class="form-control" name="email" id="email" placeholder="...@example.com">
+		    <label for="userName">User Name: </label>
+		    <input type="text" class="form-control" name="userName" id="userName" placeholder="John Smith">
 		  </div>
 		  <div class="form-group">
 		    <label for="password">Password</label>
 		    <input type="password" class="form-control" name="password" id="password" placeholder="">
 		  </div>
-		  
-		  <button class="btn btn-primary" type="submit">Login</button>
-
-		  <div class="form-group register">
-		  	<a href="">Register</a>
+		  <div class="form-group">
+		    <label for="confirmPass">Password</label>
+		    <input type="password" class="form-control" name="confirmPass" id="confirmPass" placeholder="">
 		  </div>
+		  <div class="form-group">
+		    <label for="firstName">First Name: </label>
+		    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="John">
+		  </div>
+		  <div class="form-group">
+		    <label for="lastName">Last Name: </label>
+		    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith">
+		  </div>
+            <!--
+		  <div class="form-group">
+		    <label for="birthDate">Birth Date: </label>
+		    <input type="birthDate" class="form-control" name="birthDate" id="birthDate" placeholder="1995-01-01">
+		  </div>
+            -->
+		  
+		  <button class="btn btn-primary" type="submit">Register</button>
+
 		</form>
 
 

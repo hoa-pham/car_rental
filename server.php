@@ -17,7 +17,7 @@
 		//using -> to insert DB
 		$result = $conn->query($query);
 		if($result) echo "<script>console.log('DB connected successfully!')</script>";
-		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+		else echo "<script>console.log('Error: Cannot connected')</script>";
 		//close DB
 	}
 	

@@ -64,4 +64,13 @@ function fIsValidDate($date) {
       return false; //invalid format
    }
 }
+
+function isMatch($pass, $confPass) {
+    if($pass == $confPass) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 ?>

@@ -14,23 +14,34 @@
 
          //Retrieve inputs (using helper function)
          $email = $_POST['email'];
+         //Register inputs
          $password = $_POST['password'];
-         $query = "select * from users where userName=" .$email;
-
-         $tempPass = getOne($conn,"");
+         $fName = $_POST['firstName'];
+         $lName = $_POST['lastName'];
+         $birthDate = $_POST['birthDate'];
+         $pass = $_POST['password'];
+         $confPass = $_POST['confirmPass'];         
+         //$query = "select * from users where userName=" .$email;
+         
+         //$tempPass = getOne($conn,"");
          //echo "";
 
          //set validation flag
          $IsValid = true;
 
          echo "<p class='centeredNotice'>";
+         //check if password and confirm password is match
+         if (!isMatch($pass, $confPass)) {
+             echo "Password does not match<br>";
+             $IsValid = false;
+         }
          //email
          if (!fIsValidEmail($email)) {
             echo "Invalid email<br>";
             $IsValid = false;
          }
-        
-         if (!fIsValidLength($fname, 2, 20)) {
+         //check length of input        
+         if (!fIsValidLength($fName, 2, 20)) {
             echo "Enter first name (2-20 characters)<br>";
             $IsValid = false;
          }
