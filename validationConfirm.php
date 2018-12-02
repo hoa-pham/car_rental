@@ -6,8 +6,8 @@
    <body>
       <div class="pageContainer centerText">
          <?php
-         include 'ValidationUtilities.php';
-         include 'server.php'
+         include 'validationUtilities.php';
+         include 'server.php';
 
          //create DB connection
          $conn = new mysqli($servername, $username, $password, $DB);
@@ -15,10 +15,10 @@
          //Retrieve inputs (using helper function)
          $email = $_POST['email'];
          $password = $_POST['password'];
-         $query = "select * from users where userName=" .$email
+         $query = "select * from users where userName=" .$email;
 
          $tempPass = getOne($conn,"");
-         echo ""
+         //echo "";
 
          //set validation flag
          $IsValid = true;

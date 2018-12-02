@@ -9,7 +9,7 @@
 <body>
 	<div class="container text-center form">
 		<legend>Sign In</legend>
-		<form method="post" action="validationConfirm.php" autocomplete="on">
+		<form method="post" action="http://codd.cs.gsu.edu/~vtran32/final/ValidationConfirm.php" autocomplete="on">
 		  <div class="form-group">
 		    <label for="email">Email</label>
 		    <input type="text" class="form-control" name="email" id="email" placeholder="...@example.com">
