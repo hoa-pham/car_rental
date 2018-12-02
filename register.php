@@ -11,8 +11,8 @@
 		<legend>Register</legend>
 		<form method="post" action="validationConfirm.php" autocomplete="on">
 		  <div class="form-group">
-		    <label for="userName">User Name: </label>
-		    <input type="text" class="form-control" name="userName" id="userName" placeholder="John Smith">
+		    <label for="email">User Name: </label>
+		    <input type="text" class="form-control" name="email" id="email" placeholder=".....@example.com">
 		  </div>
 		  <div class="form-group">
 		    <label for="password">Password</label>
@@ -30,12 +30,10 @@
 		    <label for="lastName">Last Name: </label>
 		    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith">
 		  </div>
-            <!--
 		  <div class="form-group">
 		    <label for="birthDate">Birth Date: </label>
 		    <input type="birthDate" class="form-control" name="birthDate" id="birthDate" placeholder="1995-01-01">
 		  </div>
-            -->
 		  
 		  <button class="btn btn-primary" type="submit">Register</button>
 

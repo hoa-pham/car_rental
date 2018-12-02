@@ -21,6 +21,7 @@
          $birthDate = $_POST['birthDate'];
          $pass = $_POST['password'];
          $confPass = $_POST['confirmPass'];         
+         $birthDate = $_POST['birthDate'];         
          //$query = "select * from users where userName=" .$email;
          
          //$tempPass = getOne($conn,"");
@@ -30,6 +31,10 @@
          $IsValid = true;
 
          echo "<p class='centeredNotice'>";
+         if (!fIsValidDate($birthDate)) {
+             echo "Birth Date is invalid<br>";
+             $IsValid = false;
+        }
          //check if password and confirm password is match
          if (!isMatch($pass, $confPass)) {
              echo "Password does not match<br>";
@@ -45,16 +50,24 @@
             echo "Enter first name (2-20 characters)<br>";
             $IsValid = false;
          }
+         if (!fIsValidLength($lName, 2, 20)) {
+            echo "Enter last name (2-20 characters)<br>";
+            $IsValid = false;
+         }
+         if (!fIsValidLength($pass, 10, 20)) {
+            echo "Enter password (2-20 characters)<br>";
+            $IsValid = false;
+         }
 
          // if (!fIsValidPhone($phone)) {
          //    echo "Enter 10 digit phone number<br>";
          //    $IsValid = false;
          // }
 
-         if (!fIsValidStateAbbr($state)) {
-            echo "Enter 2-character state abbreviation<br>";
-            $IsValid = false;
-         }
+         //if (!fIsValidStateAbbr($state)) {
+         //   echo "Enter 2-character state abbreviation<br>";
+         //   $IsValid = false;
+         //}
 
          echo "</p>";
          if (!$IsValid) {
@@ -66,6 +79,8 @@
          }
          //all inputs are valid.
          else{
+	        //insert($conn,"insert into cars value ('22222237000', 'truck', 'black red', 2019,'Honda')");
+            insert($conn, "insert into users value('$email', '$pass')");
             echo "<div class='center'>
             <img class='validImage' src='/sandvig/mis314/images/valid.png' />
             <h3>All inputs have valid formats!</h3>
