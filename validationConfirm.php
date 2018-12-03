@@ -31,6 +31,10 @@
          $IsValid = true;
 
          echo "<p class='centeredNotice'>";
+         if (isExist($conn, $email)) {
+            echo "Your user name have been used, please select an other one<br>";
+            $IsValid = false; 
+         }
          if (!fIsValidDate($birthDate)) {
              echo "Birth Date is invalid<br>";
              $IsValid = false;
@@ -55,7 +59,7 @@
             $IsValid = false;
          }
          if (!fIsValidLength($pass, 10, 20)) {
-            echo "Enter password (2-20 characters)<br>";
+            echo "Enter password (10-20 characters)<br>";
             $IsValid = false;
          }
 
@@ -81,12 +85,14 @@
          else{
 	        //insert($conn,"insert into cars value ('22222237000', 'truck', 'black red', 2019,'Honda')");
             insert($conn, "insert into users value('$email', '$pass')");
+            insert($conn, "insert into customerInfo value('$email', '$fName', '$lName', '$birthDate')");
             echo "<div class='center'>
             <img class='validImage' src='/sandvig/mis314/images/valid.png' />
             <h3>All inputs have valid formats!</h3>
             Email: $email <br>
-            First name: $fname <br>
-            State: $state <br>
+            First name: $fName <br>
+            Last name: $lName <br>
+            Birth Day: $birthDate <br>
             ";
          }
             
