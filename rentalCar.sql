@@ -11,13 +11,13 @@ DROP TABLE IF EXISTS users,
 
 CREATE TABLE users (
 	userId		int(2)			NOT NULL AUTO_INCREMENT,
-    userName	varchar(50)   	not null,
+    userName	varchar(50)   	unique	not null,
     pass		varchar(50)		Not null,	
     PRIMARY KEY (userId)
 );
 
 CREATE TABLE customerInfo (
-	userId		int(2)			unique NOT NULL,
+	userId		int(2)			unique NOT NULL AUTO_INCREMENT,
     fName   	varchar(12) 	not null,
     lName		varchar(12) 	not null,
     birthDay	date			not null,
@@ -29,7 +29,7 @@ CREATE TABLE customerInfo (
 CREATE TABLE payment (
    userId		int(2)   		NOT NULL,
    cardType     varchar(20)     NOT NULL,
-   cardNum    	BIGINT(16)      NOT NULL,
+   cardNum    	BIGINT(16)      unique	NOT NULL,
    expDate      DATE            NOT NULL,
    securityNum	int(4)			not null,
    foreign key (userId) references users (userId),
@@ -75,13 +75,13 @@ insert into  users value(null,"hiepdo@gmail.com","trancongvuit123");
 insert into  users value(null,"anhpham@gmail.com","trancongvuit123");
 
 /*customerInfo*/
-insert into  customerInfo value(1,"vu","tran","1994-01-26");
-insert into  customerInfo value(3,"vincent","tran","1994-01-26");
-insert into  customerInfo value(4,"rin","tran","1994-01-26");
-insert into  customerInfo value(7,"jack","tran","1991-09-07");
-insert into  customerInfo value(6,"hao","do","1995-05-23");
-insert into  customerInfo value(5,"hiep","do","1993-01-26");
-insert into  customerInfo value(2,"anh","pham","1995-01-26");
+insert into  customerInfo value(null,"vu","tran","1994-01-26");
+insert into  customerInfo value(null,"vincent","tran","1994-01-26");
+insert into  customerInfo value(null,"rin","tran","1994-01-26");
+insert into  customerInfo value(null,"jack","tran","1991-09-07");
+insert into  customerInfo value(null,"hao","do","1995-05-23");
+insert into  customerInfo value(null,"hiep","do","1993-01-26");
+insert into  customerInfo value(null,"anh","pham","1995-01-26");
 
 /*payment*/
 insert into  payment value(1,"VISA",1234567891011111,"2018-01-26",3456);
