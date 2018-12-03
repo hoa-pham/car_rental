@@ -51,10 +51,11 @@
 	*/
 	function getOne($conn,$query,$keyName){
 		$keyValue;
+        echo $query;
+        echo '<br>';
 		$result = $conn->query($query);
 		if($result) echo "<script>console.log('DB connected successfully!')</script>";
 		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
-
 		if ($result->num_rows > 0) {
 		    // output data of each row
 
@@ -79,7 +80,7 @@
 		return $keyValue;
 	}
     
-	//echo getOne($conn,"select * from cars where yearMake=2018 limit 1","yearMake");
+//	echo getOne($conn,"select * from cars where yearMake=2018 limit 1","color");
 
 	/*function getMu($conn,$query,$rowNum)
 		purpose: select mutilple rows at the same time

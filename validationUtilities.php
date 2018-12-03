@@ -1,4 +1,8 @@
 <?php
+include 'server.php'; 
+$conn = new mysqli($servername, $username, $password, $DB);
+//$conn = mysqli_connect("localhost","my_user","my_password","my_db");
+
 // All validation functions return either true or false.
 // 
 // Validate string length.
@@ -73,4 +77,16 @@ function isMatch($pass, $confPass) {
         return false;
     }
 }
+//check if user name is exist in db
+function isExist($conn, $email) {
+    $sql = "SELECT userName FROM users WHERE userName='$email'";
+    $result = $conn->query($sql);
+    if ($result->num_rows != 0) {
+        return true;
+    }
+    else {
+        return false; 
+    }
+}
+
 ?>
