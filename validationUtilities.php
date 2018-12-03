@@ -64,4 +64,16 @@ function fIsValidDate($date) {
       return false; //invalid format
    }
 }
+
+//check if user name is exist in db
+function isExist($conn, $email) {
+    $sql = "SELECT userName FROM users WHERE userName='$email'";
+    $result = $conn->query($sql);
+    if ($result->num_rows != 0) {
+        return true;
+    }
+    else {
+        return false; 
+    }
+}
 ?>
