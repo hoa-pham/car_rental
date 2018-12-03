@@ -11,6 +11,7 @@
 	
 	//creat connection
 	$conn = new mysqli($servername, $username, $password, $DB, 3306);
+
 	//adding to the database
 	/*
 	insert($database,$query);
@@ -22,6 +23,8 @@
 		$result = $conn->query($query);
 		if($result) echo "<script>console.log('DB connected successfully!')</script>";
 		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+
+		
 		//close DB
 	}
 	
@@ -76,6 +79,7 @@
 		    }
 		} else {
 		    $keyValue = "Error:";
+
 		}
 		return $keyValue;
 	}
@@ -125,6 +129,6 @@
 		return $keyValue;
 	}
 	
-
 	
 ?>
+

@@ -1,3 +1,4 @@
+
 ﻿# car_rental
 Serever.php
 //creat connection
@@ -17,3 +18,4 @@ $value = getMu($conn, $query, $numOfRow);
 
 then access to the value
 $value[$numOfRow]['keyName']
+
