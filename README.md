@@ -5,7 +5,8 @@ Serever.php
 $conn = new mysqli($servername, $username, $password, $DB);
 
 insert($conn,$query);
-example: insert($conn,"insert into $TableName value ($whateverValueHere)");
+example: insert($conn,"insert ignore into $TableName value ($whateverValueHere)");
+Note: use ignore to ignore dulication in database
 
 delete($conn,$query);
 update($conn,$query);
