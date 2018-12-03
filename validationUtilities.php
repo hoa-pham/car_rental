@@ -1,5 +1,4 @@
 <?php
-
 // All validation functions return either true or false.
 // 
 // Validate string length.
@@ -65,25 +64,4 @@ function fIsValidDate($date) {
       return false; //invalid format
    }
 }
-
-function isMatch($pass, $confPass) {
-    if($pass == $confPass) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-//check if user name is exist in db
-function isExist($conn, $email) {
-    $sql = "SELECT userName FROM users WHERE userName='$email'";
-    $result = $conn->query($sql);
-    if ($result->num_rows != 0) {
-        return true;
-    }
-    else {
-        return false; 
-    }
-}
-
 ?>

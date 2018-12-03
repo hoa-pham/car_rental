@@ -10,7 +10,7 @@
          include 'server.php';
 
          //Retrieve inputs (using helper function)
-         $email = $_POST['email'];
+         $email = htmlspecialchars($_POST['email']);
          $password = $_POST['password'];
          
          //set validation flag
