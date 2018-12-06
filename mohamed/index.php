@@ -77,18 +77,20 @@ $connect = mysqli_connect("127.0.0.1", "root","", "rentalCar");
 
             <!-- name of the car -->
             <h4 class="text-info"><?php echo $row['manufactor'];?></h4>
+             
+              <!-- The type of the car -->
             <h4 class="text-info"><?php echo $row['carType'];?></h4>
 
 
            <!-- price of the car -->
-            <h4 class = "text-danger" style="margin-top:20px;"><?php echo $row['carPrice'];?> </h4>
+            <h4 class = "text-danger" style="margin-top:20px;">$<?php echo $row['carPrice'];?> </h4>
 
 
 
             <!-- The amount of car you want to rent -->
             <!-- id quantity in jquery below
             Here we get the number of cars we want to rent and store into quantity -->
-            <input type="text" name="quantity" id="quantity"<?php echo $row[''];?>
+            <input type="text" name="quantity" id="quantity"<?php echo $row['vinNumber'];?>
     
        
             
@@ -181,7 +183,7 @@ $(document).ready(function(data){
     // When we click add to the cart button this code will execute
     $('.add_to_cart').click(function(){
         // we will use the vinNum as the id
-        var product_id = $(this).attr("vinNum");
+        var product_id = $(this).attr("id");
         // store the name of the car
         var product_name = $('#name' + product_id).val();
      
@@ -213,7 +215,6 @@ $(document).ready(function(data){
                 },
                 // callback will receive data from server and store in data argument
                 success:function(data){
-                    alert(data);
                     // We have now received the data in JSON format
                     $('#order_table').html(data.order_table);
                     // Also display total amount in shopping cart
@@ -224,7 +225,7 @@ $(document).ready(function(data){
                 error:function(data){
             // Must enter quantity of cars to rent
             // alert(data)
-            console.log("No request being fired");
+            // console.log("No request being fired");
             alert("Please enter number of Quantity");
                 }
             });
