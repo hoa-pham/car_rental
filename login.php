@@ -26,8 +26,6 @@
 		  	<a href="register.html">Register</a>
 		  </div>
 		</form>
-
-
 	</div>
 
 
