@@ -9,6 +9,23 @@
 </head>
 <body>
 	<div class="container text-center addPayment" style="margin-top: 5%;">
+    <?php include 'server.php';
+        $vin = $_GET['vinNum'];
+        $vinLst = explode(',', $vin);
+        $sum = 0;
+        $quanity = array_count_values($vinLst);
+
+        foreach ($quanity as $key => $value) {
+            $price = getOne($conn, "select * from cars where vinNum = $key", "carPrice");
+            $name = getOne($conn, "select * from cars where vinNum = $key", "manufactor");
+            $color = getOne($conn, "select * from cars where vinNum = $key", "color");
+            echo "Brand " . $name . " Color: " . $color . " quanity: " . $value . ", Price: $" . $price * $value . "<br>"; 
+            $sum = $sum + ($price * $value);
+        }
+        
+        echo "Total price is: $" . $sum . "<br>";
+        
+    ?>
 		<button class="btn btn-lg btn-primary" onclick="formShow()">Add payment</button>
 	</div>
 	

@@ -2,18 +2,14 @@
     $servername = "localhost";
     //administrator
     //vutran
-    //dodanghiep12
-	$username = "vutran";
+	$username = "administrator";
 	//very_strong_password
 	//Trancongvuit123
-	//Do06051993
-	$password = "Trancongvuit123";
-
-    //changing database name to match
+	$password = "very_strong_password";
 	$DB = "rentalCar";
 	
 	//creat connection
-	$conn = new mysqli($servername, $username, $password, $DB, 3306);
+	$conn = new mysqli($servername, $username, $password, $DB);
 
 	//adding to the database
 	/*
