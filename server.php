@@ -6,6 +6,7 @@
 	//very_strong_password
 	//Trancongvuit123
 	$password = "Do06051993";
+
     //changing database name to match
 	$DB = "rentalCar";
 	
@@ -15,14 +16,20 @@
 	//adding to the database
 	/*
 	insert($database,$query);
-	insert($conn,"insert into cars value ('22222237000', 'truck', 'black red', 2019,'Honda')");
+	insert($conn,"insert ignore into cars value ('22222237000', 'truck', 'black red', 2019,'Honda')");
 	*/
 	function insert($conn,$query){
 		//$query = "insert into " .$table ." value " .$value;
 		//using -> to insert DB
 		$result = $conn->query($query);
-		if($result) echo "<script>console.log('DB connected successfully!')</script>";
-		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+		if($result) {
+			echo "<script>console.log('DB connected successfully!')</script>";
+			return true;
+		}
+		else {
+			echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+			return false;
+		}
 	}
 	
 	//update the database

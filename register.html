@@ -12,35 +12,29 @@
 		<form method="post" action="register.php" autocomplete="on">
 			<div class="form-group">
 		    <label for="firstName">First Name: </label>
-		    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="John">
+		    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="John" required>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="lastName">Last Name: </label>
-		    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith">
+		    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith" required>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="birthDate">Birth Date: </label>
-		    <input type="birthDate" class="form-control" name="birthDate" id="birthDate" placeholder="1995-01-01">
+		    <input type="birthDate" class="form-control" name="birthDate" id="birthDate" placeholder="1995-01-01" required>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="email">Email </label>
-		    <input type="text" class="form-control" name="email" id="email" placeholder=".....@example.com">
+		    <input type="text" class="form-control" name="email" id="email" placeholder=".....@example.com" required>
 		  </div>
 
 		  <div class="form-group">
 		    <label for="password">Password</label>
-		    <input type="password" class="form-control" name="password" id="password" placeholder="">
+		    <input type="password" class="form-control" name="password" id="password" placeholder="" required max="25" min="6">
 		  </div>
-		  
-		  <div class="form-group">
-		    <label for="confirmPass">Password</label>
-		    <input type="password" class="form-control" name="confirmPass" id="confirmPass" placeholder="">
-		  </div>
-		  
-		  
+
 		  <button class="btn btn-primary" type="submit">Register</button>
 
 		</form>
