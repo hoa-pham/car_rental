@@ -2,7 +2,7 @@
 
 session_start();
 // Connect to database
-$connect = mysqli_connect("127.0.0.1", "administrator","very_strong_password", "rentalCar");
+include 'server.php';
 
 ?>
 
@@ -62,19 +62,19 @@ $connect = mysqli_connect("127.0.0.1", "administrator","very_strong_password", "
          <?php
          // fetch everything from the cars table and store in result variable
          $query = "select * from cars";
-         $result = mysqli_query($connect,$query) or die("Invalid query: " );
+         $result = mysqli_query($conn,$query) or die("Invalid query: " );
          // We are fetching everything from the cars table
          while($row = mysqli_fetch_array($result)){
             
          ?>
          <div class = "col-md-4" style = "margin-top:12px;">
 
-        <p> here </p>
 
             <div style = "border:10px solid #333; background-color:#f1f1f1;border-radius:50px;
             padding:16px; height:auto;" align="center">
 
             <!-- we are printing the images from db to the screen -->
+        <form method="post" action="action.php" autocomplete="on">
             <img src = "<?php echo $row['carPic']; ?>" class="img-responsive" style="padding:auto; margin-bottom:auto; border-spacing:100px 100px;;" /><br />
 
             <!-- name of the car -->
@@ -107,7 +107,8 @@ $connect = mysqli_connect("127.0.0.1", "administrator","very_strong_password", "
             <!-- This line will be the button you click to add to the cart -->
             <!-- Each car is unique since the id for it is based on the vinNumber -->
             <!-- The Ajax for the add_to_cart is at the bottom -->
-            <input type="button" name="add_to_cart" id="<?php echo $row["vinNum"];?>" class="btn btn-warning form-control add_to_cart" style= "margin-top: 20px;" value="Add to Cart" /> 
+            <input type="submit" name="add_to_cart" id="<?php echo $row["vinNum"];?>" class="btn btn-warning form-control add_to_cart" style= "margin-top: 20px;" value="Add to Cart" /> 
+        </form>
         </div>
     </div>
 

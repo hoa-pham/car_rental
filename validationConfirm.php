@@ -6,7 +6,7 @@
    <body>
       <div class="pageContainer centerText">
          <?php
-         include 'ValidationUtilities.php';
+         include 'validationUtilities.php';
          include 'server.php';
 
          //Retrieve inputs (using helper function)
