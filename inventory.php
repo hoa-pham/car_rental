@@ -69,6 +69,8 @@ $connect = mysqli_connect("127.0.0.1", "administrator","very_strong_password", "
          ?>
          <div class = "col-md-4" style = "margin-top:12px;">
 
+        <p> here </p>
+
             <div style = "border:10px solid #333; background-color:#f1f1f1;border-radius:50px;
             padding:16px; height:auto;" align="center">
 
