@@ -35,7 +35,9 @@
             else{
                echo "you passed!";
                // do whatever here!
-               header('Location: '.'home.php');
+               $useridQuery = "select * from users where userName='$email'";
+               $id = getOne($conn,$useridQuery,"userId");
+               header("Location:home.php?user=".$id);
             }
 
          }

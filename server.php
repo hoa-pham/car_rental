@@ -2,15 +2,17 @@
     $servername = "localhost";
     //administrator
     //vutran
-	$username = "administrator";
+	$username = "vutran";
 	//very_strong_password
 	//Trancongvuit123
-	$password = "very_strong_password";
+	//Do06051993
+	$password = "Trancongvuit123";
+
     //changing database name to match
 	$DB = "rentalCar";
 	
 	//creat connection
-	$conn = new mysqli($servername, $username, $password, $DB, 3306);
+	$conn = new mysqli($servername, $username, $password, $DB);
 
 	//adding to the database
 	/*
@@ -87,7 +89,7 @@
 		return $keyValue;
 	}
     
-	// echo getOne($conn,"select * from users where userName='trancongvuit@gmail.com'","userName");
+	//echo getOne($conn,"select * from users where userName='trancongvuit@gmail.com'","userName");
 
 	/*function getMu($conn,$query,$rowNum)
 		purpose: select mutilple rows at the same time
