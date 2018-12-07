@@ -8,7 +8,22 @@
 	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
+    
 	<div class="container text-center addPayment" style="margin-top: 5%;">
+    <?php include 'server.php';
+        $vin = $_GET['vinNum'];
+        $vinLst = explode(',', $vin);
+        $sum = 0;
+        for ($i = 0; $i < count($vinLst); $i++) {
+            $price = getOne($conn, "select * from cars where vinNum = $vinLst[$i]", "carPrice");
+            $name = getOne($conn, "select * from cars where vinNum = $vinLst[$i]", "manufactor");
+            $color = getOne($conn, "select * from cars where vinNum = $vinLst[$i]", "color");
+            echo $name . " color " . $color . ": " . $price . "<br>";
+            $sum = $sum + $price;
+        }
+        echo "Total price is: " . $sum . "<br>";
+        
+    ?>
 		<button class="btn btn-lg btn-primary" onclick="formShow()">Add payment</button>
 	</div>
 	
