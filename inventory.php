@@ -2,20 +2,8 @@
 
 session_start();
 // Connect to database
-//$connect = mysqli_connect("127.0.0.1", "root","", "rentalCar");
-//include '../server.php'
-$servername = "localhost";
-    //administrator
-    //vutran
-    $username = "vutran";
-    //very_strong_password
-    //Trancongvuit123
-    $password = "Trancongvuit123";
-    //changing database name to match
-    $DB = "rentalCar";
-    
-    //creat connection
-    $conn = new mysqli($servername, $username, $password, $DB, 3306);
+include 'server.php';
+
 ?>
 
 
@@ -74,17 +62,19 @@ $servername = "localhost";
          <?php
          // fetch everything from the cars table and store in result variable
          $query = "select * from cars";
-         $result = mysqli_query($connect,$query) or die("Invalid query: " . mysql_error());
+         $result = mysqli_query($conn,$query) or die("Invalid query: " );
          // We are fetching everything from the cars table
          while($row = mysqli_fetch_array($result)){
             
          ?>
          <div class = "col-md-4" style = "margin-top:12px;">
 
+
             <div style = "border:10px solid #333; background-color:#f1f1f1;border-radius:50px;
             padding:16px; height:auto;" align="center">
 
             <!-- we are printing the images from db to the screen -->
+        <form method="post" action="action.php" autocomplete="on">
             <img src = "<?php echo $row['carPic']; ?>" class="img-responsive" style="padding:auto; margin-bottom:auto; border-spacing:100px 100px;;" /><br />
 
             <!-- name of the car -->
@@ -102,7 +92,7 @@ $servername = "localhost";
             <!-- The amount of car you want to rent -->
             <!-- id quantity in jquery below
             Here we get the number of cars we want to rent and store into quantity -->
-            <input type="text" name="quantity" id="quantity"<?php echo $row['vinNumber'];?>
+            <input type="text" name="quantity" value="number of car" id="quantity"<?php echo $row['vinNumber'];?>
     
        
             
@@ -117,7 +107,8 @@ $servername = "localhost";
             <!-- This line will be the button you click to add to the cart -->
             <!-- Each car is unique since the id for it is based on the vinNumber -->
             <!-- The Ajax for the add_to_cart is at the bottom -->
-            <input type="button" name="add_to_cart" id="<?php echo $row["vinNum"];?>" class="btn btn-warning form-control add_to_cart" style= "margin-top: 20px;" value="Add to Cart" /> 
+            <input type="submit" name="add_to_cart" id="<?php echo $row["vinNum"];?>" class="btn btn-warning form-control add_to_cart" style= "margin-top: 20px;" value="Add to Cart" /> 
+        </form>
         </div>
     </div>
 
