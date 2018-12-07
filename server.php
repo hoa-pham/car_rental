@@ -2,10 +2,10 @@
     $servername = "localhost";
     //administrator
     //vutran
-	$username = "vutran";
+	$username = "dodanghiep12";
 	//very_strong_password
 	//Trancongvuit123
-	$password = "Trancongvuit123";
+	$password = "Do06051993";
     //changing database name to match
 	$DB = "rentalCar";
 	
@@ -81,7 +81,7 @@
 		return $keyValue;
 	}
     
-	// echo getOne($conn,"select * from users where userName='trancongvuit@gmail.com'","userName");
+	//echo getOne($conn,"select * from users where userName='trancongvuit@gmail.com'","userName");
 
 	/*function getMu($conn,$query,$rowNum)
 		purpose: select mutilple rows at the same time
