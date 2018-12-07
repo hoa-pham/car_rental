@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-    
 	<div class="container text-center addPayment" style="margin-top: 5%;">
     <?php include 'server.php';
         $vin = $_GET['vinNum'];
