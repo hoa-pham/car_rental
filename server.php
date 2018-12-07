@@ -2,10 +2,12 @@
     $servername = "localhost";
     //administrator
     //vutran
-	$username = "dodanghiep12";
+    //dodanghiep12
+	$username = "vutran";
 	//very_strong_password
 	//Trancongvuit123
-	$password = "Do06051993";
+	//Do06051993
+	$password = "Trancongvuit123";
 
     //changing database name to match
 	$DB = "rentalCar";
