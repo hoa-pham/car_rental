@@ -13,85 +13,50 @@ include 'server.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test</title> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="home.css">
-    
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-         <h1 align="center"> Car Inventory</h1></br>
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">New User ?</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Members</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
-      </li>  
-      <li class="nav-item">
-        <a class="nav-link" href="#">Menu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://nba.com">Inventory</a>
-      </li>
-            <li class="nav-item">
-    <a class="nav-link" href="#">Youtube Video</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><img src="pics/homepics/cart.png" alt="cart" width="30" height="30"></a>
-      </li>
-    </ul>
-  </div>  
-</nav>
-
-   <br />
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">New User ?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://nba.com">Inventory</a>
+          </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Youtube Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="pics/homepics/cart.png" alt="cart" width="30" height="30"></a>
+          </li>
+        </ul>
+      </div>  
+    </nav>
    <!-- Car Inventory will display across the screen -->
-   <div class = "container" style="width:1000px;">
-     <button class="btn btn-lg btn-primary checkOut" >Check Out</button>
-
-     <!-- Two tabs for cart. Nav tabs does this for us  -->
-     <ul class = "nav nav-tabs">
-     <!-- active defines current page in tab and data toggle is the specific tab
-        href will show the Inventory and Cart
-      -->
-        <li class="active"><a data-toggle="tab" href="#products">Product</a></li>
-     <!-- The condition will check the value of the shopping cart varialbe if its set or not
-     It will then display whats in our shopping cart -->
-        <li class="active">
-            <a data-toggle="tab" href="#cart">Cart
-                <span class="badge">
-            <?php
-                if(isset($_SESSION['shopping_cart']))
-                {  
-                //  This will show how many items in the cart 
-                  echo count($_SESSION['shopping_cart']);
-                }else{
-                    // If theres nothing in the cart then print 0
-                     echo '0';
-                 }
-             ?>
-                </span>
-            </a>
-        </li>
-    </ul>
-
-
-
-    <div class="tab-content">
+   
+    <div class="container">
     <!-- Display things to add into cart -->
          <div id="products" class="tab-pane fade in active">
          <?php
