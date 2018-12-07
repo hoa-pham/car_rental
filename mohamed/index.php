@@ -2,8 +2,20 @@
 
 session_start();
 // Connect to database
-$connect = mysqli_connect("127.0.0.1", "root","", "rentalCar");
-
+//$connect = mysqli_connect("127.0.0.1", "root","", "rentalCar");
+//include '../server.php'
+$servername = "localhost";
+    //administrator
+    //vutran
+    $username = "vutran";
+    //very_strong_password
+    //Trancongvuit123
+    $password = "Trancongvuit123";
+    //changing database name to match
+    $DB = "rentalCar";
+    
+    //creat connection
+    $conn = new mysqli($servername, $username, $password, $DB, 3306);
 ?>
 
 
