@@ -8,9 +8,63 @@
 	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-	<div class="container text-center addPayment" style="margin-top: 5%;">
-		<button class="btn btn-lg btn-primary" onclick="formShow()">Add payment</button>
-	</div>
+	<?php include 'server.php';
+        $vin = $_GET['vinNum'];
+        $vinLst = explode(',', $vin);
+        $sum = 0;
+        $quanity = array_count_values($vinLst);
+    ?>
+
+    <div class="container static">
+
+    	<div class="container confirm">
+			<div class="jumbotron">
+			  <h1 class="display-4 text-center">Just One More Step</h1>
+			</div>
+			<div class="container">
+				<table class="table">
+		  <thead>
+		    <tr>
+		      	<th scope="col">Quanity</th>
+		      	<th scope="col">VIN Number</th>
+		      	<th scope="col">Brand</th>
+		      	<th scope="col">Color</th>
+		      	<th scope="col">Price</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<?php
+	        //loop through and get prices
+	        foreach ($quanity as $key => $value) {
+	            $price = getOne($conn, "select * from cars where vinNum = $key", "carPrice");
+	            $brand = getOne($conn, "select * from cars where vinNum = $key", "manufactor");
+	            $color = getOne($conn, "select * from cars where vinNum = $key", "color");
+	            // echo "Brand " . $brand . " Color: " . $color . " quanity: " . $value . ", Price: $" . $price * $value . "<br>"; 
+	            $sum = $sum + ($price * $value);
+	       ?>
+		    <tr>
+		      <th scope="row"><?php echo $value;?></th>
+		      <td><?php echo $key;?></td>
+		      <td><?php echo $brand;?></td>
+		      <td><?php echo $color;?></td>
+		      <td><?php echo $price;?></td>
+		    </tr>
+		    </tbody>
+		    <?php
+	        	}
+	    	?>
+		</table>
+		  <h4 >Total:  $<?php echo $sum?></h4>
+
+		 <div class="container text-center addPayment" style="margin-top: 5%;">
+			<button class="btn btn-lg btn-success" onclick="pay()" style="width: 150px;">Pay</button>
+			<button class="btn btn-lg btn-primary" onclick="formShow()">Add payment</button>
+		</div>
+			</div>
+		</div>
+    </div>
+
+	
 	
 
 	<div class="container text-center form payment" style="display: none;">
@@ -55,6 +109,19 @@
 			<button type="submit" class="btn btn-primary" id="checkCard" disabled onclick="verifyCard()">Use This Card</button>
 		</form>
 	</div>
+<!-- style="display: none;" -->
+	<div class="container confirm" style="display: none;">
+		<div class="jumbotron">
+		  <h1 class="display-4">Thanks for your purchase!</h1>
+		  <p class="lead">We'll send you a comfirmation email!</p>
+		  <hr class="my-4">
+		  <div class="text-center">
+		  	<a class="btn btn-primary btn-lg" href="home.php" role="button">Back to Home</a>
+		  </div>
+		  </p>
+		</div>
+	</div>
+
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="checkOut.js"></script>

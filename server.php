@@ -2,16 +2,14 @@
     $servername = "localhost";
     //administrator
     //vutran
-	$username = "dodanghiep12";
+	$username = "vutran";
 	//very_strong_password
 	//Trancongvuit123
-	$password = "Do06051993";
-
-    //changing database name to match
+	$password = "Trancongvuit123";
 	$DB = "rentalCar";
 	
 	//creat connection
-	$conn = new mysqli($servername, $username, $password, $DB, 3306);
+	$conn = new mysqli($servername, $username, $password, $DB);
 
 	//adding to the database
 	/*
@@ -63,8 +61,8 @@
 	function getOne($conn,$query,$keyName){
 		$keyValue;
 		$result = $conn->query($query);
-		if($result) echo "<script>console.log('DB connected successfully!')</script>";
-		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+		// if($result) echo "<script>console.log('DB connected successfully!')</script>";
+		// else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
 
 		if ($result->num_rows > 0) {
 		    // output data of each row
@@ -75,8 +73,8 @@
 		    		$keyValue = "Error: Check Your Key!";
 			    }  
 			    else{
-			    	echo "<script>console.log('" .$i ."')</script>";
-			    	echo "<script>console.log('".$keyName .":  " . $row[$keyName] ."')</script>";
+			    	// echo "<script>console.log('" .$i ."')</script>";
+			    	// echo "<script>console.log('".$keyName .":  " . $row[$keyName] ."')</script>";
 			        $i++;
 			        $keyValue = $row[$keyName];
 			    } 
