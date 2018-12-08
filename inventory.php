@@ -35,19 +35,13 @@ include 'server.php';
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">New User ?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Members</a>
+            <a class="nav-link" href="register.php">New User ?</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="profile.php">Profile</a>
           </li>  
           <li class="nav-item">
-            <a class="nav-link" href="#">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://nba.com">Inventory</a>
+            <a class="nav-link" href="#">Inventory</a>
           </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Youtube Video</a>

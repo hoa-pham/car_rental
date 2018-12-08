@@ -25,7 +25,7 @@
     //if passed validation
     if($isValid){
     	$queryUsers = "insert ignore into users value (null,'$email', '$password')";
-    	$queryCustomerInfo = "insert ignore into customerinfo value (null,'$firstName', '$lastName', '$birthDate')";
+    	$queryCustomerInfo = "insert ignore into customerInfo value (null,'$firstName', '$lastName', '$birthDate')";
     	if(insert($conn,$queryUsers) && insert($conn,$queryCustomerInfo)) {
     		echo "<h2>Thank you! Welcome to the Best service Rental Car!</h2>";
     		
