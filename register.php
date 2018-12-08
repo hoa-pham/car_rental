@@ -19,7 +19,8 @@
     	}
     	else echo "<h2>email is existed! Please chose another!</h2>";
     }
-    else echo "<h2>not validation!</h2>";
+	else echo "<h2>not validation!</h2>";
+	header("location:home.php");
 
 
     //if passed validation

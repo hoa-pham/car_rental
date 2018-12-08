@@ -103,22 +103,6 @@
                                                 <p><?php echo"$username";?></p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Password</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo"$password";?></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Payment</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo"$cardtype";?></p>
-                                            </div>
-                                        </div>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" >    
                                 <div class="container">

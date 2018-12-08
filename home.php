@@ -33,18 +33,13 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">New User ?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Members</a>
+          <a class="nav-link" href="prepay.php">PrePay Parking</a>
+          <a class="nav-link" href="register.php">New User ?</a>
         </li>
         <li class="nav-item">
         	<?php $id = $_GET['user']; ?>
   		<a class="nav-link" href='profile.php?userid=<?php echo $id ?>'>Profile</a>
         </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu</a>
-        </li>
         <li class="nav-item">
   		<a class="nav-link" href="inventory.php?userid=<?php echo $id ?>">Inventory</a>
         </li>
