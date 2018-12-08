@@ -14,9 +14,9 @@
     <div class="container emp-profile">
 		<?php
 			$userid = $_GET['userid'];
-			$fname = getOne($conn,"select * from customerinfo where userId = $userid","fName");
-			$lname = getOne($conn,"select * from customerinfo where userId = $userid","lName");
-			$birthday = getOne($conn,"select * from customerinfo where userId = $userid","birthDay");
+			$fname = getOne($conn,"select * from customerInfo where userId = $userid","fName");
+			$lname = getOne($conn,"select * from customerInfo where userId = $userid","lName");
+			$birthday = getOne($conn,"select * from customerInfo where userId = $userid","birthDay");
 			$username = getOne($conn,"select * from users where userId = $userid","userName");
 			$password = getOne($conn,"select * from users where userId = $userid","pass");
 			$cardtype = getOne($conn,"select * from payment where userId = $userid","cardType");

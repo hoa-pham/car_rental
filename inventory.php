@@ -41,7 +41,7 @@ include 'server.php';
             <a class="nav-link" href="#">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="profile.php">Profile</a>
           </li>  
           <li class="nav-item">
             <a class="nav-link" href="#">Menu</a>
