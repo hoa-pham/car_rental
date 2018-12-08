@@ -3,7 +3,7 @@ var cardNumPassed = false; //use for cardNum
 var passed =false; //use for all form
 //showing the payment form
 function formShow(){
-	console.log($('.payment'));
+	// console.log($('.payment'));
 	$('.addPayment').css('display','none');
 	$('.payment').show(700);
 }
@@ -72,7 +72,7 @@ $('#cardNum').change(function(){
 	else {
 		//card is not valid
 		//do something here
-		console.log("card is not valid!");
+		// console.log("card is not valid!");
 		$('#cardNum').addClass('is-invalid');
 		$('#inputMessage').html("Invalid Card Number!");
 		$('#inputMessage').css('color','red');
@@ -96,23 +96,23 @@ $('#form').change(function(){
 			}	
 			else {
 				passed = false;
-				console.log("sNum is not passed!");
+				// console.log("sNum is not passed!");
 			}
 		}
 		else{
 			passed =false;
-			console.log("exDate is not passed!");
+			// console.log("exDate is not passed!");
 		}
 	}
 	else{
 		passed = false;
-		console.log("name is not passed!");
+		// console.log("name is not passed!");
 	}
 
 	//if form passed validation
 	//then enable button
 	if(passed===true){
-		console.log("passed!")
+		// console.log("passed!")
 		$('#checkCard').removeAttr("disabled");
 	}
 	
@@ -120,18 +120,25 @@ $('#form').change(function(){
 
 function verifyCard(){
 	var cardNum = $('#cardNum').val();
-	console.log(cardNum);
+	// console.log(cardNum);
 
 	var name = $('#name').val();
-	console.log(name);
+	// console.log(name);
 
 	var exDate = $('#exDate').val();
 	console.log(exDate);
 
 	var sNum = $('#sNum').val();
-	console.log(sNum);
+	// console.log(sNum);
 }
 
  // MasterCard  51-55 
  // Visa  4 
  // American Expression  34 or 37
+
+//pay button event
+ function pay(){
+ 	console.log('click!');
+ 	$('div.static').css('display','none');
+ 	$('.confirm').show();
+ }

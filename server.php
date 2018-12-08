@@ -2,10 +2,10 @@
     $servername = "localhost";
     //administrator
     //vutran
-	$username = "administrator";
+	$username = "vutran";
 	//very_strong_password
 	//Trancongvuit123
-	$password = "very_strong_password";
+	$password = "Trancongvuit123";
 	$DB = "rentalCar";
 	
 	//creat connection
@@ -61,8 +61,8 @@
 	function getOne($conn,$query,$keyName){
 		$keyValue;
 		$result = $conn->query($query);
-		if($result) echo "<script>console.log('DB connected successfully!')</script>";
-		else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
+		// if($result) echo "<script>console.log('DB connected successfully!')</script>";
+		// else echo "<script>console.log('Error: " .mysqli_error($conn)."')</script>";
 
 		if ($result->num_rows > 0) {
 		    // output data of each row
@@ -73,8 +73,8 @@
 		    		$keyValue = "Error: Check Your Key!";
 			    }  
 			    else{
-			    	echo "<script>console.log('" .$i ."')</script>";
-			    	echo "<script>console.log('".$keyName .":  " . $row[$keyName] ."')</script>";
+			    	// echo "<script>console.log('" .$i ."')</script>";
+			    	// echo "<script>console.log('".$keyName .":  " . $row[$keyName] ."')</script>";
 			        $i++;
 			        $keyValue = $row[$keyName];
 			    } 
