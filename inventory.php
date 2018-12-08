@@ -11,16 +11,17 @@ include 'server.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title> 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="home.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -59,34 +60,33 @@ include 'server.php';
     <div class="container">
     <!-- Display things to add into cart -->
          <div id="products" class="tab-pane fade in active">
-         <?php
+       <?php
              // fetch everything from the cars table and store in result variable
              $query = "select * from cars";
              $result = mysqli_query($conn,$query) or die("Invalid query: " );
              // We are fetching everything from the cars table
              while($row = mysqli_fetch_array($result)){
             
-         ?>
-         <div class = "col-md-4" style = "margin-top:12px;">
-            <div style = "border:10px solid #333; background-color:#f1f1f1;border-radius:50px;
-            padding:16px; height:auto;" align="center">
-                <img src = "<?php echo $row['carPic']; ?>" class="img-responsive" style="padding:auto; margin-bottom:auto; border-spacing:100px 100px;;" /><br />
+         ?> 
+
+         <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src = "<?php echo $row['carPic']; ?>" style="padding:auto; margin-bottom:auto; border-spacing:100px 100px;;" /><br />
 
                 <!-- name of the car -->
-                <h4 class="text-info"><?php echo $row['manufactor'];?></h4>
+                <h5 class="card-title"><?php echo $row['manufactor'];?></h5>
                  
                   <!-- The type of the car -->
-                <h4 class="text-info"><?php echo $row['carType'];?></h4>
+                <h5 class="card-title"><?php echo $row['carType'];?></h5>
 
 
                <!-- price of the car -->
-                <h4 class = "text-danger" style="margin-top:20px;">$<?php echo $row['carPrice'];?> </h4>
+                <h5 class="card-title">$<?php echo $row['carPrice'];?> </h5>
                 <!-- color -->
-                <h4 class = "text-primary" style="margin-top:20px;"><?php echo $row["color"]; ?></h4>
+                <h5 class="card-title"><?php echo $row["color"]; ?></h5>
                 
                
                 <!-- the next line will store the prices -->
-                <h4 class = "text-primary" style="margin-top:20px;"><?php echo $row['carPrice'];?></h4>
+                <h5 class="card-title"><?php echo $row['carPrice'];?></h5>
 
                 <button class="btn btn-warning form-control add_to_cart" style= "margin-top: 20px;" value="<?php echo $row["vinNum"];?>">Add to Cart</button>
             

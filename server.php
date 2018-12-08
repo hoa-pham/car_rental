@@ -7,13 +7,13 @@
 	//very_strong_password
 	//Trancongvuit123
 	//Do06051993
-	$password = "Trancongvuit123";
+	$password = "Trancongvuit123"
 
     //changing database name to match
 	$DB = "rentalCar";
 	
 	//creat connection
-	$conn = new mysqli($servername, $username, $password, $DB, 3306);
+	$conn = new mysqli($servername, $username, $password, $DB);
 
 	//adding to the database
 	/*
